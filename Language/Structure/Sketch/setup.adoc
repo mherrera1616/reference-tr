@@ -1,60 +1,16 @@
----
-title: setup()
-categories: [ "Functions" ]
-subCategories: [ "Sketch" ]
----
-
-
-
-
-
-= setup()
-
-
-// OVERVIEW SECTION STARTS
-[#overview]
---
-
-[float]
-=== Description
-The `setup()` function is called when a sketch starts. Use it to initialize variables, pin modes, start using libraries, etc. The `setup()` function will only run once, after each powerup or reset of the Arduino board.
-[%hardbreaks]
-
---
-// OVERVIEW SECTION ENDS
-
-
-// HOW TO USE SECTION STARTS
-[#howtouse]
---
-
-[float]
-=== Example Code
-
-[source,arduino]
-----
-int buttonPin = 3;
-
+/ the setup function runs once
 void setup() {
-  Serial.begin(9600);
-  pinMode(buttonPin, INPUT);
+// initialize digital pin 12 for the LED 1's output and pin 13 for the LED 2's output.
+pinMode(12, OUTPUT);
+pinMode(13, OUTPUT);
 }
 
+// the loop function runs over and over again forever
 void loop() {
-  // ...
+digitalWrite(12, HIGH); // turn on the LED 1
+digitalWrite(13, LOW); // turn off the LED 2
+delay(1000); // wait for a second
+digitalWrite(12, LOW); // turn off the LED 1
+digitalWrite(13, HIGH); // turn on the LED 2
+delay(1000); // wait for a second
 }
-----
-
---
-// HOW TO USE SECTION ENDS
-
-
-// SEE ALSO SECTION
-[#see_also]
---
-
-[float]
-=== See also
-
---
-// SEE ALSO SECTION ENDS
